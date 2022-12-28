@@ -8,6 +8,10 @@ app.set('view engine', 'ejs');
 // 정적파일 경로 지정
 app.use(express.static("public"));
 
+// post 전송시 필요한 모듈(미들웨어)
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 // home
 app.get('/', function(요청, 응답){
   응답.render('pages/index.ejs')
